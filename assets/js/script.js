@@ -47,6 +47,15 @@ var timeBlock = [
     tValue: "17",
     userinput: ""
   }, 
-
 ]
-console.log(timeBlock)
+  console.log(timeBlock)
+
+// adding function
+
+
+// Date and tme function
+var currentDay = moment().format("dddd, MMMM Do, YYYY ");
+$("#currentDay").text(currentDay);
+
+
+
