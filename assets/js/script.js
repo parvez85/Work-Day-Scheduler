@@ -58,4 +58,53 @@ var currentDay = moment().format("dddd, MMMM Do, YYYY ");
 $("#currentDay").text(currentDay);
 
 
+// create rows and attach it to the container
 
+$(timeBlock).each(function(i) {
+   var row = $("<div>");
+   if (i< $(timeBlock).length) {
+     row.addClass("row");
+     $(".container").append(row);
+   }
+   i++
+}); 
+
+
+// create column for time block and append column to rows
+
+$("div.row").each(function(i) {
+  var timeValue = timeBlock[i].tValue;
+  var labelCol   = $("<div>");
+  var inputCol  = $("<div>");
+
+  labelCol
+      .addClass("col-2 hour")
+      .text(timeBlock[i].label)
+  inputCol
+      .addClass("col-10 time-block")
+      .attr("value", timeValue)
+   $(this).append(labelCol)
+   $(this).append(inputCol)   
+    i++
+})
+    
+
+    // create text area for user input and append it to the column
+    
+    $(".time-block").each(function(i) {
+     var saveCol = $("<button>");
+     var timeValue = timeBlock[i].tValue;
+      var inputDesc = $("<textarea>").text(timeBlock[i].userinput);
+      inputDesc
+        .addClass("description")
+        .addClass("float-left")
+        .attr("id", timeValue)
+        saveCol
+         .addClass("col-1 saveBtn float-right")
+         .text("Save")
+       
+         $(this).append(inputDesc)
+        $(this).append(saveCol)
+        $("description").show()
+        i++
+    }) 
