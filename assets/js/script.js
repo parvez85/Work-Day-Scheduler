@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   // global variables
 
-  const timeBlock = [
+  var timeBlock = [
     {
       label: "09:00 AM",
       tValue: "9",
@@ -67,7 +67,7 @@ $(document).ready(function () {
   // create rows and attach it to the container
  
   $(timeBlock).each(function (i) {
-    const row = $("<div>");
+    var row = $("<div>");
     if (i < $(timeBlock).length) {
       row
         .addClass("row")
@@ -79,9 +79,9 @@ $(document).ready(function () {
   // create columns for  time-blocks and  append columns to rows
 
   $("div.row").each(function (i) {
-    const timeValue = timeBlock[i].tValue;
-    const labelCol = $("<div>");
-    const inputCol = $("<div>");
+    var timeValue = timeBlock[i].tValue;
+    var labelCol = $("<div>");
+    var inputCol = $("<div>");
 
     labelCol
       .addClass("col-2 hour")
@@ -98,9 +98,9 @@ $(document).ready(function () {
   // connect timeblocks to current time
   
   $(".time-block").each(function (i) {
-    const currentHour = parseInt(moment().format('H'));
+    var currentHour = parseInt(moment().format('H'));
     
-    const timeId = $(this).attr("value");
+    var timeId = $(this).attr("value");
     if (currentHour < timeId) {
       $(this).addClass("future");
     } else if (currentHour == timeId) {
@@ -115,9 +115,9 @@ $(document).ready(function () {
   // create textareas for user input and append them to the container
   
   $(".time-block").each(function (i) {
-    const saveCol = $("<button>");
-    const timeValue = timeBlock[i].tValue;
-    const inputDesc = $("<textarea>").text(timeBlock[i].userInput);
+    var saveCol = $("<button>");
+    var timeValue = timeBlock[i].tValue;
+    var inputDesc = $("<textarea>").text(timeBlock[i].userInput);
     inputDesc
       .addClass("description")
       .addClass("float-left")
@@ -136,8 +136,8 @@ $(document).ready(function () {
   // saveBtn event listener
 
   $(".saveBtn").on("click", function () {
-    const savedInput = $(this).siblings("textarea").val()
-    const timeInput = $(this).parent().attr("value")
+    var savedInput = $(this).siblings("textarea").val()
+    var timeInput = $(this).parent().attr("value")
     localStorage.setItem(timeInput, savedInput);
   });
 

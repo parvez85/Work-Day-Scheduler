@@ -29,3 +29,11 @@ To use the Work Day Scheduler application, simply open the index.html file in yo
 To add a task, simply click on the time slot for that task and enter the task name. Then, click the save button to save the task.
 
 The application will automatically update the colors of the time slots to show the past, present, and future tasks. The application will also display the current date.
+
+Please click on the link below to see the 'work day scheduleer' application:
+
+https://parvez85.github.io/Work-Day-Scheduler/
+
+Please click on the link below to see the 'work day scheduleer' application git hub page:
+
+https://github.com/parvez85/Work-Day-Scheduler
